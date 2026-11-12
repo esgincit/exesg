@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+*.log
+.env*
+*.zip
+zip-b64.txt
+chunk*.txt
+admin-password.txt
+admin-cookie.txt

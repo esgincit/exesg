@@ -1,0 +1,23 @@
+# Redirect legacy .html URLs to the new routes (Cloudflare Pages)
+/index.html /
+/about.html /about/
+/whyus.html /whyus/
+/wesupport.html /wesupport/
+/roadmap.html /roadmap/
+/staff_aug.html /staff-aug/
+/man_services.html /managed-services/
+/value_added.html /value-added/
+/trainings.html /trainings/
+/staff_consulting.html /staffing/
+/sap.html /sap/
+/oracle.html /oracle/
+/ms.html /microsoft/
+/cloud.html /cloud/
+/bigdata.html /big-data/
+/bi_technologies.html /bi-technologies/
+/ui_technologies.html /ui-technologies/
+/rpa.html /rpa/
+/revpro.html /revpro/
+/clients.html /clients/
+/careers.html /careers/
+/contacts.php /contact/
