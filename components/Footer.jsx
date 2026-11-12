@@ -42,14 +42,20 @@ export default function Footer() {
                 Contact Us
               </Link>
             </p>
+            <p className="mt-4 text-xs">
+              <Link href="/privacy/" className="hover:text-white">Privacy Policy</Link>
+              {" · "}
+              <Link href="/disclaimer/" className="hover:text-white">Disclaimer</Link>
+            </p>
           </div>
         </div>
       </div>
       <div className="border-t border-white/10 py-4">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 text-xs sm:flex-row">
           <p>Copyright © ESG. All Rights Reserved.</p>
-          <p>
-            <Link href="/contact/" className="hover:text-white">Disclaimer</Link>
+          <p className="flex gap-4">
+            <Link href="/privacy/" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/disclaimer/" className="hover:text-white">Disclaimer</Link>
           </p>
         </div>
       </div>

@@ -73,6 +73,14 @@ export default function ContactForm() {
       <p id="form-status" className="text-sm text-green-700">
         {status}
       </p>
+      <p className="text-xs text-gray-500">
+        By submitting this form, you agree that we may use the details you provide to respond to
+        your enquiry, in line with our{" "}
+        <a href="/privacy/" className="font-semibold text-brand hover:underline">
+          Privacy Policy
+        </a>
+        .
+      </p>
     </form>
   );
 }

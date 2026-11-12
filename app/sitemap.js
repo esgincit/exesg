@@ -25,6 +25,8 @@ export default function sitemap() {
     "clients/",
     "careers/",
     "contact/",
+    "privacy/",
+    "disclaimer/",
   ];
   return routes.map((r) => ({ url: `${base}/${r}`, lastModified: "2026-11-10" }));
 }
