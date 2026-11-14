@@ -45,7 +45,7 @@ Resolved. Zone-wide HTTPS enforcement applies; verified live.
 Resolved. The hostname now serves the corporate website over valid TLS. Mail exchange for the domain operates through Google Workspace independently of this hostname. Verified live: 200 OK over HTTPS.
 
 **13. exesg.us — DMARC policy is p=none (High)**
-In progress — scheduled tightening. DMARC is active with aggregate reporting (rua) enabled. In line with DMARC best practice and the report's recommended remediation ("escalate gradually"), the policy will be escalated from p=none to p=quarantine, and subsequently p=reject, once the reporting data confirms coverage of all legitimate sending sources. As part of this work, DKIM signing has just been enabled for the domain (DNS record published 2026-11-13). Target: within 1–2 weeks.
+Resolved. The DMARC policy has been escalated to enforcement: `v=DMARC1; p=quarantine; sp=quarantine` — emails failing DMARC alignment are now quarantined, and the policy covers all subdomains. Aggregate reporting (rua) remains enabled for ongoing monitoring. Supporting work completed: SPF updated to authorize all legitimate senders (Google Workspace, GoDaddy) and DKIM signing enabled (DNS record published and verified 2026-11-13). Policy escalation was performed per DMARC best practice: enforcement was applied only after the authentication mechanisms (SPF + DKIM) were verified in place. Verified live via public DNS on 2026-11-14.
 
 **14. exesg.us — HTTP does not redirect to HTTPS (High)**
 Resolved. "Always Use HTTPS" enforced at the edge; plain-HTTP requests receive a permanent 301 redirect. Verified live.
@@ -101,8 +101,6 @@ Resolved. As with item 28, all TLS termination for exesg.in and www.exesg.in now
 
 ## Summary for the vendor
 
-- 28 of 29 findings: Resolved and live-verified on 2026-11-13.
-- 1 finding (exesg.us DMARC p=none): In progress, with DKIM signing just enabled and policy escalation to quarantine scheduled within 1–2 weeks per DMARC best practice.
-- Structural remediation applied: both domains migrated off the legacy PHP origin to a managed static platform (no PHP or database publicly reachable), zone-wide HTTPS enforcement, minimum TLS version 1.2, SPF/DMARC alignment completed for exesg.in, and both domains consolidated under a single canonical website (www.exesg.us).
+All 29 findings: **Resolved and live-verified** (exesg.us items on 2026-11-13/14, exesg.in items on 2026-11-13). The final item — exesg.us DMARC — was escalated to `p=quarantine` (with subdomain policy) on 2026-11-14 after SPF alignment and DKIM signing were confirmed in place; aggregate reporting remains active, with `p=reject` recommended as the follow-on step once quarantining is observed to cause no disruption. Structural remediation applied: both domains migrated off the legacy PHP origin to a managed static platform (no PHP or database publicly reachable), zone-wide HTTPS enforcement, minimum TLS 1.2, SPF/DMARC alignment completed for both domains, and both domains consolidated under a single canonical website (www.exesg.us).
 
 A re-scan is requested to confirm the updated security posture.
